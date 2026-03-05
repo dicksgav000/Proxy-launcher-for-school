@@ -57,14 +57,32 @@
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body style="margin: 0; padding: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #1e3a8a 100%); display: flex; align-items: center; justify-content: center; background-attachment: fixed;">
-  <div style="text-align: center; color: #60a5fa; max-width: 600px; padding: 40px;">
-   <p style="font-size: 28px; font-weight: 600; margin-bottom: 32px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000;">The link for the meantime is...</p><a href="https://a.link.shermanstuff.com/" target="_blank" rel="noopener noreferrer" id="launch-button">LunarV2</a>
-   <p style="font-size: 28px; font-weight: 600; margin-top: 32px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000;">Enjoy!!!</p>
+  <div style="text-align: center; color: #60a5fa; max-width: 600px; padding: 40px;"><a href="https://a.link.shermanstuff.com/" target="_blank" rel="noopener noreferrer" id="launch-button">Random</a>
   </div>
   <script>
+    const randomLinks = [
+      "https://fernvcsa.gangashrestha.com.np/",
+      "https://dogeub.storage.googleapis.com/index.html",
+      "https://huh.kubota-lab.com/",
+      "https://lunar.kubota-lab.com/",
+      "https://world.worldoflighting.co.za/onboarding/",
+      "https://cane.finucane.org/onboarding/",
+      "https://vcsawaves.gangashrestha.com.np/",
+      "https://thinking.gangashrestha.com.np/",
+      "https://matter.gangashrestha.com.np/",
+      "https://invest.orlandobestinvest.com/onboarding/",
+      "https://best.orlandobestinvest.com/onboarding/",
+      "https://polden.polden21vek.ru/onboarding/",
+      "https://vek.polden21vek.ru/onboarding/"
+    ];
+
+    function getRandomLink() {
+      return randomLinks[Math.floor(Math.random() * randomLinks.length)];
+    }
+
     const defaultConfig = {
-      button_text: "LunarV2",
-      button_link: "https://a.link.shermanstuff.com/"
+      button_text: "Random",
+      button_link: getRandomLink()
     };
 
     async function onConfigChange(config) {
@@ -110,5 +128,6 @@
     
     onConfigChange(defaultConfig);
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d7a7439e1482b0a',t:'MTc3MjcyNzY4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d7a7439e1482b0a',t:'MTc3MjcyNzY4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d7ac0e7e6c72b0a',t:'MTc3MjczMDgzMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
