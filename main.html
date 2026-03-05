@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Launch Button</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+      }
+      20%, 24%, 55% {
+        opacity: 0.4;
+      }
+    }
+
+    #launch-button {
+      background-color: black !important;
+      padding: 16px 48px;
+      font-size: 24px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none !important;
+      display: inline-block;
+    }
+
+    /* GLOWING MODE (BUTTON_MODE = 1) */
+    #launch-button.glowing {
+      color: #60a5fa !important;
+      border: 2px solid #60a5fa !important;
+      text-shadow: 0 0 10px #60a5fa;
+      box-shadow: 0 0 20px rgba(96, 165, 250, 0.6), inset 0 0 20px rgba(96, 165, 250, 0.1);
+    }
+    
+    #launch-button.glowing:hover {
+      background-color: rgba(96, 165, 250, 0.1) !important;
+      box-shadow: 0 0 30px rgba(96, 165, 250, 0.8), inset 0 0 30px rgba(96, 165, 250, 0.2);
+      text-shadow: 0 0 20px #60a5fa;
+    }
+
+    /* FLICKERING MODE (BUTTON_MODE = 0) */
+    #launch-button.flickering {
+      color: #999999 !important;
+      border: 2px solid #666666 !important;
+      animation: flicker 3s infinite;
+    }
+    
+    #launch-button.flickering:hover {
+      background-color: rgba(100, 100, 100, 0.1) !important;
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body style="margin: 0; padding: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #1e3a8a 100%); display: flex; align-items: center; justify-content: center; background-attachment: fixed;">
+  <div style="text-align: center; color: #60a5fa; max-width: 600px; padding: 40px;">
+   <p style="font-size: 28px; font-weight: 600; margin-bottom: 32px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000;">The link for the meantime is...</p><a href="https://a.link.shermanstuff.com/" target="_blank" rel="noopener noreferrer" id="launch-button">LunarV2</a>
+   <p style="font-size: 28px; font-weight: 600; margin-top: 32px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000;">Enjoy!!!</p>
+  </div>
+  <script>
+    const defaultConfig = {
+      button_text: "LunarV2",
+      button_link: "https://a.link.shermanstuff.com/"
+    };
+
+    async function onConfigChange(config) {
+      const button = document.getElementById('launch-button');
+      button.textContent = config.button_text || defaultConfig.button_text;
+      button.href = config.button_link || defaultConfig.button_link;
+      
+      const BUTTON_MODE = (config.button_link || defaultConfig.button_link) ? 1 : 0;
+      
+      if (BUTTON_MODE === 1) {
+        button.classList.remove('flickering');
+        button.classList.add('glowing');
+      } else {
+        button.classList.remove('glowing');
+        button.classList.add('flickering');
+      }
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["button_text", config.button_text || defaultConfig.button_text],
+        ["button_link", config.button_link || defaultConfig.button_link]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+    
+    onConfigChange(defaultConfig);
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d7a7439e1482b0a',t:'MTc3MjcyNzY4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
